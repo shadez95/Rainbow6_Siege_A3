@@ -297,17 +297,17 @@ class Params
 
 class CfgDebriefing
 {
-	class End1
+	class bluWin
 	{
 		title = "Blufor Win!";
-		subtitle = "";
+		subtitle = "All hostages are secured...";
 		description = "All hostages are secured...";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
 	};
 
-	class End2
+	class indWin
 	{
 		title = "Independents Win!";
 		subtitle = "";
@@ -317,7 +317,7 @@ class CfgDebriefing
 		// pictureColor[] = {0.0,0.3,0.6,1};
 	};
 
-	class End3
+	class hvtEsc
 	{
 		title = "HVT Escaped! Indy Win.";
 		subtitle = "";
@@ -327,7 +327,7 @@ class CfgDebriefing
 		// pictureColor[] = {0.0,0.3,0.6,1};
 	};
 
-	class End4
+	class hostagesDead
 	{
 		title = "All Hostages Are Dead";
 		subtitle = "";
@@ -337,7 +337,7 @@ class CfgDebriefing
 		// pictureColor[] = {0.0,0.3,0.6,1};
 	};
 
-	class End5
+	class bluWinIndDead
 	{
 		title = "Blufor Win!";
 		subtitle = "";

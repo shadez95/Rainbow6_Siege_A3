@@ -1,31 +1,15 @@
 #define Q(var) #var
 #define CALL_COMPILE(var) call compileFinal preprocessFileLineNumbers Q(var)
+
 CALL_COMPILE(XON_hostageScript\hostage.sqf);
 execVM "civcount.sqf";
 _logistic = execVM "=BTC=_Logistic\=BTC=_logistic_Init.sqf";
 
 END_TIME = 1200; //When mission should end in seconds.
 ELAPSED_TIME = 0;
-if (isServer) then {
-    [] spawn {
-        START_TIME = serverTime;
-        while {ELAPSED_TIME < END_TIME} do {
-            ELAPSED_TIME = serverTime - START_TIME;
-			switch (ELAPSED_TIME) do {
-				case 300: { publicVariable "ELAPSED_TIME"; };
-				case 600: { publicVariable "ELAPSED_TIME"; };
-				case 900: { publicVariable "ELAPSED_TIME"; };
-				case 1080: { publicVariable "ELAPSED_TIME"; };
-			};
-			if (ELAPSED_TIME > 1080) then {
-				publicVariable "ELAPSED_TIME";
-			};
-            sleep 1;
-        };
-    };
-};
 
 XON_fnc_timeFunctionHint = {
+	private[Q(_finish_time_seconds),Q(_finish_time_minutes)];
 	_END_TIME = _this select 0;
 	_ELAPSED_TIME = _this select 1;
 	
@@ -41,23 +25,6 @@ XON_fnc_timeFunctionHint = {
 	_formatted_time = format ["%1:%2", _finish_time_minutes, _finish_time_seconds];
     hintSilent format ["Time left:\n%1", _formatted_time];
 };
-
-if !(isDedicated) then {
-    [] spawn {
-        while{ELAPSED_TIME < END_TIME } do {
-			switch (ELAPSED_TIME) do {
-				case 300: { [END_TIME,ELAPSED_TIME] call XON_fnc_timeFunctionHint; };
-				case 600: { [END_TIME,ELAPSED_TIME] call XON_fnc_timeFunctionHint; };
-				case 900: { [END_TIME,ELAPSED_TIME] call XON_fnc_timeFunctionHint; };
-				case 1080: { [END_TIME,ELAPSED_TIME] call XON_fnc_timeFunctionHint; };
-			};
-			if (ELAPSED_TIME > 1080) then {
-				[END_TIME,ELAPSED_TIME] call XON_fnc_timeFunctionHint;
-			};
-            sleep 1;
-        };
-    };
-};  
 
 // ====================================================================================
 
@@ -276,3 +243,7 @@ f_wound_extraFAK = 3;
 [] execVM "f\medical\medical_init.sqf";
 
 // ====================================================================================
+
+
+Rainbow6 = true;
+publicVariable Q(Rainbow6);
