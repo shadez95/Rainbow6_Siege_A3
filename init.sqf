@@ -4,9 +4,6 @@ CALL_COMPILE(XON_hostageScript\hostage.sqf);
 execVM "civcount.sqf";
 _logistic = execVM "=BTC=_Logistic\=BTC=_logistic_Init.sqf";
 
-//3rd person only for infantry
-[] execVM "scripts\3rdView Restrictions.sqf";
-
 END_TIME = 1200; //When mission should end in seconds.
 ELAPSED_TIME = 0;
 if (isServer) then {

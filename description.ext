@@ -19,7 +19,7 @@ disabledAI = 1;
 
 onLoadName = "Rainbow Six Siege A3";
 onLoadMission = "Extract the hostages safely before the time runs out!";
-author = "Onedigita aka Roy & D.Bgay";
+author = "Onedigita aka Roy & dixon13 aka D.Begay";
 loadScreen = "siege.jpg";
 overviewPicture = "siege.jpg";
 
