@@ -1,6 +1,9 @@
 Rainbow6 = false;
 waitUntil{Rainbow6};
 
+_pos = getPos h3;
+obj1 setPos _pos;
+
 [] spawn {
     START_TIME = serverTime;
 	ELAPSED_TIME = serverTime - START_TIME;

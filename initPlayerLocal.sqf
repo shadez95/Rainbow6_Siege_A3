@@ -8,7 +8,7 @@ waitUntil{Rainbow6};
 [] execVM 'QS_Fatigue.sqf';
 
 // 3rd person only for infantry
-[] execVM '3rdView Restrictions.sqf';
+[] execVM '3rdView_Restrictions.sqf';
 
 "ELAPSED_TIME" addPublicVariableEventHandler {
 	[_this select 1] spawn {
@@ -27,5 +27,4 @@ waitUntil{Rainbow6};
 			};
 		};
     };
-
 };
